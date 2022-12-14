@@ -1,0 +1,23 @@
+[tool.isort]
+profile = "black"
+
+# [tool.black]
+# line-length = 80
+
+[tool.pytest.ini_options]
+addopts = """
+    -vv
+    --exitfirst
+    --new-first
+    --durations=10
+    --asyncio-mode=auto
+    --cov=app
+    -m='full'
+"""
+markers = [
+    "smoke: smoke tests",
+    "full: full suite of tests",
+    "mains: mains resource related tests",
+    "extras: extras resource related tests",
+    "swappables: swappables resource related tests",
+]
