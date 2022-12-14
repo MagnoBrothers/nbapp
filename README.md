@@ -26,6 +26,15 @@
 
 # Running nbapp locally
 
+Create the following .env files:
+
+- `.envs/.local/.api`
+- `.envs/.local/.api.test`
+- `.envs/.local/.web`
+
+For reference use the `.envs/.local/.*.example` files.
+
+
 Install `docker` and execute:
 
 ```sh
