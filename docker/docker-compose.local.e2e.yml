@@ -1,0 +1,140 @@
+version: "3.7"
+
+volumes:
+  local_postgres_data: {}
+  local_tusd_data: {}
+  local_cloudserver_data: {}
+  local_cloudserver_metadata: {}
+  local_minio_data: {}
+  local_web_node_modules: {}
+
+services:
+  api:
+    image: nbapp_local_api
+    build:
+      context: ../
+      dockerfile: ./docker/local/api/Dockerfile
+    container_name: nbapp_local_api
+    env_file:
+      - ../.envs/.local/.api
+    volumes:
+      - ../nbapi:/nbapi:z
+    ports:
+      - 9000:9000
+      - 5678:5678
+    depends_on:
+      - "postgres"
+    tty: true # fixes colored output!
+    command: /start
+
+  postgres:
+    image: postgres:14
+    container_name: nbapp_local_postgres
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 50432:5432
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+    command: -p "5432"
+
+  worker:
+    image: nbapp_local_worker
+    build:
+      context: ../
+      dockerfile: ./docker/local/api/Dockerfile
+    container_name: nbapp_local_worker
+    env_file:
+      - ../.envs/.local/.api
+    volumes:
+      - ../nbapi:/nbapi:z
+    ports:
+      - 51678:5678
+    depends_on:
+      - "postgres"
+      - "redis"
+    tty: true # fixes colored output!
+    command: /start-worker
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+  web:
+    image: nbapp_local_web
+    build:
+      context: ../
+      dockerfile: ./docker/local/web/Dockerfile
+    container_name: nbapp_local_web
+    env_file:
+      - ../.envs/.local/.web
+    volumes:
+      - ../nbweb:/nbweb:z
+      - local_web_node_modules:/nbweb/node_modules
+    ports:
+      - 3000:3000
+      - 50678:5678
+    depends_on:
+      - "api"
+    tty: true # fixes colored output!
+    # command: sleep infinity
+    command: npm run dev
+
+  e2e:
+    image: nbapp_local_e2e
+    build:
+      context: ../
+      dockerfile: ./docker/local/e2e/Dockerfile
+    container_name: nbapp_local_e2e
+    # env_file:
+    #   - ../.env
+    volumes:
+      - ../nbweb:/nbweb:z
+      - local_web_node_modules:/nbweb/node_modules
+    # ports:
+    #   - 3000:3000
+    #   - 50678:5678
+    depends_on:
+      - "api"
+      - "web"
+      - "tusd"
+      - "minio"
+    tty: true # fixes colored output!
+    # command: sleep infinity
+    command: npm run cypress:run
+
+  tusd:
+    image: nbapp_local_tusd
+    build:
+      context: ../
+      dockerfile: ./docker/local/tusd/Dockerfile
+    container_name: nbapp_local_tusd
+    environment:
+      AWS_ACCESS_KEY_ID: password123
+      AWS_SECRET_ACCESS_KEY: password123
+      AWS_REGION: us-east-1
+    volumes:
+      - local_tusd_data:/srv/tusd-data/data:rw
+    ports:
+      - "1080:1080"
+    # command: -upload-dir=/srv/tusd-data/data --hooks-http http://api:9000/api/v1/image-upload-notifications --hooks-enabled-events post-finish
+    # command: -s3-disable-ssl -s3-endpoint=cloudserver:8000 -s3-bucket=tusd --hooks-http http://api:9000/api/v1/image-upload-notifications --hooks-enabled-events post-finish
+    command: -s3-disable-ssl -s3-endpoint=minio:9000 -s3-bucket=tusd --hooks-http http://api:9000/api/v1/image-upload-notifications --hooks-enabled-events post-finish
+
+  minio:
+    image: quay.io/minio/minio
+    container_name: nbapp_local_minio
+    environment:
+      MINIO_ROOT_USER: password123
+      MINIO_ROOT_PASSWORD: password123
+    volumes:
+      - local_minio_data:/data:rw
+    ports:
+      - 53330:9000
+      - 53331:9001
+    command: server /data --console-address ":9001"

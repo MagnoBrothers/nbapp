@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -o errexit
+set -o nounset
+
+
+python -m celery --app app.main:celery_app worker \
+    --queues main-queue \
+    --events \
+    --logfile celery-worker.log \
+    --loglevel DEBUG \
+    --concurrency=1 \
+    --autoscale=1,1 \
+    --pool solo
+

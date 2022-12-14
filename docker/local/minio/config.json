@@ -1,0 +1,12 @@
+{
+  "version": "10",
+  "aliases": {
+    "local": {
+      "url": "http://127.0.0.1:9000",
+      "accessKey": "password123",
+      "secretKey": "password123",
+      "api": "S3v4",
+      "path": "auto"
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "jobs": {
+    "links": {
+      "prev": null,
+      "next": "http://localhost:3001/jobs?skip=0&limit=5"
+    },
+    "data": [
+      {
+        "id": "fdd5e5d7-c4a7-4d7e-9942-06d7feb80f63",
+        "basin": {
+          "name": "Nemo pariatur fugit consequuntur sequi fugit id nemo minima.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "done",
+        "progress": "63"
+      },
+      {
+        "id": "747d8292-5378-4e4a-aa93-ef5952294bc5",
+        "basin": {
+          "name": "Repudiandae alias nesciunt illo ullam corrupti modi deserunt.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "failed",
+        "progress": "76"
+      },
+      {
+        "id": "17cee4ed-02e7-4526-8c5e-3655d8a57f46",
+        "basin": {
+          "name": "Sapiente inventore nostrum aut quod.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "failed",
+        "progress": "92"
+      },
+      {
+        "id": "c41ab4f3-7316-441b-abf3-bde3b183883c",
+        "basin": {
+          "name": "Sit quas dolorum occaecati deleniti accusamus cumque.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "pending",
+        "progress": "93"
+      },
+      {
+        "id": "11ea5415-1070-43df-ad0c-941dbb893f9b",
+        "basin": {
+          "name": "Ab aut quas possimus fugiat voluptatibus veritatis ab porro.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "failed",
+        "progress": "54"
+      },
+      {
+        "id": "29e4f0a8-33d6-42dc-9377-d77c6ba10258",
+        "basin": {
+          "name": "Ea praesentium vel incidunt quaerat tempora aut quod.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "done",
+        "progress": "78"
+      },
+      {
+        "id": "6b8c886b-a43d-437c-8e9b-a0b647fdda36",
+        "basin": {
+          "name": "Necessitatibus nisi ut cupiditate voluptates quas vero pariatur alias sunt.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "failed",
+        "progress": "52"
+      },
+      {
+        "id": "7725b747-38a6-4255-8267-17cbc0567228",
+        "basin": {
+          "name": "Provident nobis eius recusandae omnis.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "running",
+        "progress": "20"
+      },
+      {
+        "id": "000d8946-1668-4ff4-98af-8bda542dacd8",
+        "basin": {
+          "name": "Perferendis assumenda aliquid porro.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "pending",
+        "progress": "52"
+      },
+      {
+        "id": "065ff312-7ddb-4953-8016-baf007d45eb3",
+        "basin": {
+          "name": "Expedita totam voluptates.",
+          "imw": 128,
+          "imh": 128,
+          "coefs": "[1, 0, 2, 0, 1]",
+          "crmin": -1.0,
+          "crmax": 1.0,
+          "cimin": -1.0,
+          "cimax": 1.0,
+          "itmax": 30,
+          "tol": 1e-6,
+          "imageUrl": "https://picsum.photos/200/300",
+          "thumbnailUrl": "https://picsum.photos/32/32"
+        },
+        "status": "running",
+        "progress": "13"
+      }
+    ],
+    "total": "20"
+  }
+}
