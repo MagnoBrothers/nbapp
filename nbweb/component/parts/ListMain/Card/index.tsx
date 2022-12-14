@@ -31,7 +31,7 @@ function Card({ job, isLoading }: Props) {
       {/* middle */}
       <div className="flex flex-col flex-auto h-full justify-evenly">
         <div className="">
-          <p className="text-xs text-primary">@username</p>
+          <p className="text-xs text-primary"></p>
         </div>
         <div className="text-xl font-bold text-primary">{job.basin.name}</div>
         <div
