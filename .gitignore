@@ -1,0 +1,5 @@
+.vscode/
+.env
+.envs/.*/**
+!.envs/.*/**/*.example
+screenshots
