@@ -1,4 +1,4 @@
-FROM python:3.11.0-alpine3.16
+FROM python:3.9.13-alpine3.14
 
 ENV USER_ID=1000
 ENV GROUP_ID=1000
@@ -21,6 +21,8 @@ RUN addgroup \
 
 RUN apk update && \
     apk add --no-cache \
+    alpine-sdk \
+    llvm-dev \
     postgresql-dev \
     postgresql-client \
     g++ \
