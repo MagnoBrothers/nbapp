@@ -1,3 +1,4 @@
+
 aiosqlite==0.17.0
 alembic==1.8.1
 amqp==5.1.1
@@ -55,12 +56,14 @@ itsdangerous==2.1.2
 jedi==0.18.1
 kombu==5.2.4
 lazy-object-proxy==1.8.0
+llvmlite==0.39.1
 Mako==1.2.3
 MarkupSafe==2.1.1
 matplotlib-inline==0.1.6
 mccabe==0.7.0
 mypy-extensions==0.4.3
 nodeenv==1.7.0
+numba==0.56.4
 numpy==1.23.4
 opentelemetry-api==1.14.0
 opentelemetry-instrumentation-asgi==0.35b0

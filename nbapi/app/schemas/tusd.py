@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Literal, List, Optional, Dict, Any
+from typing import Literal, List, Optional, Dict, Any, Union
 
 from pydantic import BaseModel, Field
 
@@ -29,7 +29,7 @@ class Upload(BaseModel):
     is_partial: bool = Field(alias="IsPartial")
     partial_uploads: Optional[List[str]] = Field(alias="PartialUploads")
     metadata: Dict = Field(alias="MetaData")
-    storage: FileStorage | S3Storage = Field(alias="Storage")
+    storage: Union[FileStorage,S3Storage] = Field(alias="Storage")
 
 
 class HttpRequest(BaseModel):

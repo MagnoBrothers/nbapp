@@ -58,7 +58,7 @@ class JobService(BaseService):
             raise ValueError(f"Unable to find job [{job_id=}]")
 
         thumbnail_params = BasinParams.parse_obj(job.basin)
-        thumbnail_params.imw, thumbnail_params.imh = 31, 31
+        thumbnail_params.imw, thumbnail_params.imh = 128, 128
         thumbnail_basin_gen = BasinGenerator(params=thumbnail_params)
         for pct in thumbnail_basin_gen.pct_gen(step_threshold=100):
             ...
