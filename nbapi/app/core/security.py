@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from typing import Any, Union
+from typing import Any, Union, Optional
 
 from jose import jwt
 from passlib.context import CryptContext
@@ -38,7 +38,7 @@ def encode_token(token_payload: TokenPayload) -> str:
     return token
 
 
-def decode_token(token: str) -> TokenPayload | None:
+def decode_token(token: str) -> Optional[TokenPayload]:
     try:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[ALGORITHM])
         token_data = TokenPayload(**payload)

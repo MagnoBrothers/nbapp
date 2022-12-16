@@ -58,8 +58,8 @@ class JobCreate(BaseModel):
 
 
 class Links(BaseModel):
-    prev: str | None
-    next: str | None
+    prev: Optional[str]
+    next: Optional[str]
 
 
 class JobsRead(BaseModel):
